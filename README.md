@@ -28,7 +28,11 @@ The shot recorder asks you to record your current range and conditions, then fir
 
 ### RANGE
 
-The range estimator asks you to provide a known target size
+The range estimator asks you to provide a known target size, then check the target's size in your scope and report it in mils. An estimated range in yards is returned.
+
+### AMMO
+
+Manage your ammunition types. 12 slots are provided. Each should be a unique firing setup, so if you're using a single rifle with the TI-85 then slots can represent one ammunition type/lot, or if you're using multiple rifles then each can represent one rifle/ammunition combination. Slots can be loaded, cleared, renamed, and moved up and down in a paginated list.
 
 ## Memory limitations
 
