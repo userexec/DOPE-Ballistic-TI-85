@@ -1,0 +1,27 @@
+:Lbl R
+:ClLCD
+:Disp "Target known measure:"
+:Disp " "
+:Disp "How many feet?"
+:Input F
+:Disp "How many inches?"
+:Input I
+:F*12+I→TS
+:
+:ClLCD
+:Disp "Now looking through"
+:Disp "scope, how many mils?"
+:Input M
+:TS*27.77/M→R
+:round(R,0)→R
+:
+:ClLCD
+:Outpt(3,8,"Range:")
+:Outpt(5,6,R)
+:Outpt(5,10,"yards")
+:
+:Menu(5,"DONE",Q)
+:
+:Lbl Q
+:ClLCD
+:Return

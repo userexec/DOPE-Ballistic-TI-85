@@ -1,0 +1,113 @@
+:Lbl M
+:ClLCD
+:ID→InitID
+:
+:Outpt(3,3,"Clearing")
+:If ID==0:Then
+:Outpt(3,12,"ALL AMMO")
+:Else
+:Outpt(3,11,": ammo #")
+:Outpt(3,19,ID)
+:End
+:
+:Outpt(4,5,"Are you sure?")
+:Menu(1,"YES",C,2,"NO",Q,5,"C-ALL",Z)
+:
+:Lbl Z
+:0→ID
+:Goto M
+:
+:Lbl C
+:Outpt(4,5,"             ")
+:" "→N
+:[[0,0,0,0,0]]→D
+:0→S
+:Outpt(7,1,"**")
+:
+:If ID==1 or ID==0:Then
+:" "→N1
+:[[0,0,0,0,0]]→D1
+:0→S1
+:End
+:Outpt(7,3,"**")
+:
+:If ID==2 or ID==0:Then
+:" "→N2
+:[[0,0,0,0,0]]→D2
+:0→S2
+:End
+:Outpt(7,5,"**")
+:
+:If ID==3 or ID==0:Then
+:" "→N3
+:[[0,0,0,0,0]]→D3
+:0→S3
+:End
+:Outpt(7,7,"**")
+:
+:If ID==4 or ID==0:Then
+:" "→N4
+:[[0,0,0,0,0]]→D4
+:0→S4
+:End
+:Outpt(7,9,"**")
+:
+:If ID==5 or ID==0:Then
+:" "→N5
+:[[0,0,0,0,0]]→D5
+:0→S5
+:End
+:Outpt(7,11,"**")
+:
+:If ID==6 or ID==0:Then
+:" "→N6
+:[[0,0,0,0,0]]→D6
+:0→S6
+:End
+:Outpt(7,13,"**")
+:
+:If ID==7 or ID==0:Then
+:" "→N7
+:[[0,0,0,0,0]]→D7
+:0→S7
+:End
+:Outpt(7,15,"**")
+:
+:If ID==8 or ID==0:Then
+:" "→N8
+:[[0,0,0,0,0]]→D8
+:0→S8
+:End
+:Outpt(7,17,"*")
+:
+:If ID==9 or ID==0:Then
+:" "→N9
+:[[0,0,0,0,0]]→D9
+:0→S9
+:End
+:Outpt(7,18,"*")
+:
+:If ID==10 or ID==0:Then
+:" "→N10
+:[[0,0,0,0,0]]→D10
+:0→S10
+:End
+:Outpt(7,19,"*")
+:
+:If ID==11 or ID==0:Then
+:" "→N11
+:[[0,0,0,0,0]]→D11
+:0→S11
+:End
+:Outpt(7,20,"*")
+:
+:If ID==12 or ID==0:Then
+:" "→N12
+:[[0,0,0,0,0]]→D12
+:0→S12
+:End
+:Outpt(7,21,"*")
+:
+:Lbl Q
+:InitID→ID
+:Return

@@ -1,0 +1,220 @@
+:Lbl M
+:ClLCD
+:Disp "Choose ammo type:"
+:Disp " "
+:Disp "1: "+N1
+:Disp "2: "+N2
+:Disp "3: "+N3
+:Disp "4: "+N4
+:Menu(1,"1",L1,2,"2",L2,3,"3",L3,4,"4",L4,5,"MORE",M2)
+:Lbl M2
+:ClLCD
+:Disp "Choose ammo type:"
+:Disp " "
+:Disp "5: "+N5
+:Disp "6: "+N6
+:Disp "7: "+N7
+:Disp "8: "+N8
+:Menu(1,"5",L5,2,"6",L6,3,"7",L7,4,"8",L8,5,"MORE",M3)
+:Lbl M3
+:ClLCD
+:Disp "Choose ammo type:"
+:Disp " "
+:Disp "9: "+N9
+:Disp "10: "+N10
+:Disp "11: "+N11
+:Disp "12: "+N12
+:Menu(1,"9",L9,2,"10",L10,3,"11",L11,4,"12",L12,5,"TOP",M)
+:
+:Lbl L1
+:1→ID:N1→N:D1→D:S1→S
+:Goto D
+:Lbl L2
+:2→ID:N2→N:D2→D:S2→S
+:Goto D
+:Lbl L3
+:3→ID:N3→N:D3→D:S3→S
+:Goto D
+:Lbl L4
+:4→ID:N4→N:D4→D:S4→S
+:Goto D
+:Lbl L5
+:5→ID:N5→N:D5→D:S5→S
+:Goto D
+:Lbl L6
+:6→ID:N6→N:D6→D:S6→S
+:Goto D
+:Lbl L7
+:7→ID:N7→N:D7→D:S7→S
+:Goto D
+:Lbl L8
+:8→ID:N8→N:D8→D:S8→S
+:Goto D
+:Lbl L9
+:9→ID:N9→N:D9→D:S9→S
+:Goto D
+:Lbl L10
+:10→ID:N10→N:D10→D:S10→S
+:Goto D
+:Lbl L11
+:11→ID:N11→N:D11→D:S11→S
+:Goto D
+:Lbl L12
+:12→ID:N12→N:D12→D:S12→S
+:Goto D
+:
+:Lbl D
+:ClLCD
+:DCurr
+:Menu(1,"LOAD",Q,2,"NAME",N,3,"MOVE",MV,4,"CLEAR",C,5,"BACK",M)
+:
+:Lbl N
+:ClLCD
+:Disp "Current name:"
+:Disp N
+:Disp " "
+:Disp "Type new name in"
+:Disp "quotes and press"
+:Disp "enter to accept:"
+:Input NN
+:If lngth NN==0
+:Goto D
+:NN→N
+:If ID==1
+:NN→N1
+:If ID==2
+:NN→N2
+:If ID==3
+:NN→N3
+:If ID==4
+:NN→N4
+:If ID==5
+:NN→N5
+:If ID==6
+:NN→N6
+:If ID==7
+:NN→N7
+:If ID==8
+:NN→N8
+:If ID==9
+:NN→N9
+:If ID==10
+:NN→N10
+:If ID==11
+:NN→N11
+:If ID==12
+:NN→N12
+:Goto D
+:
+:Lbl C
+:DWait
+:DClear
+:Goto M
+:
+:Lbl MV
+:Menu(1,"UP",MU,2,"DOWN",MD,5,"BACK",D)
+:
+:Lbl MU
+:If ID==1:Then
+:N12→N1:D12→D1:S12→S1
+:N→N12:D→D12:S→S12
+:End
+:If ID==2:Then
+:N1→N2:D1→D2:S1→S2
+:N→N1:D→D1:S→S1
+:End
+:If ID==3:Then
+:N2→N3:D2→D3:S2→S3
+:N→N2:D→D2:S→S2
+:End
+:If ID==4:Then
+:N3→N4:D3→D4:S3→S4
+:N→N3:D→D3:S→S3
+:End
+:If ID==5:Then
+:N4→N5:D4→D5:S4→S5
+:N→N4:D→D4:S→S4
+:End
+:If ID==6:Then
+:N5→N6:D5→D6:S5→S6
+:N→N5:D→D5:S→S5
+:End
+:If ID==7:Then
+:N6→N7:D6→D7:S6→S7
+:N→N6:D→D6:S→S6
+:End
+:If ID==8:Then
+:N7→N8:D7→D8:S7→S8
+:N→N7:D→D7:S→S7
+:End
+:If ID==9:Then
+:N8→N9:D8→D9:S8→S9
+:N→N8:D→D8:S→S8
+:End
+:If ID==10:Then
+:N9→N10:D9→D10:S9→S10
+:N→N9:D→D9:S→S9
+:End
+:If ID==11:Then
+:N10→N11:D10→D11:S10→S11
+:N→N10:D→D10:S→S10
+:End
+:If ID==12:Then
+:N11→N12:D11→D12:S11→S12
+:N→N11:D→D11:S→S11
+:End
+:Goto M
+:
+:Lbl MD
+:If ID==1:Then
+:N2→N1:D2→D1:S2→S1
+:N→N2:D→D2:S→S2
+:End
+:If ID==2:Then
+:N3→N2:D3→D2:S3→S2
+:N→N3:D→D3:S→S3
+:End
+:If ID==3:Then
+:N4→N3:D4→D3:S4→S3
+:N→N4:D→D4:S→S4
+:End
+:If ID==4:Then
+:N5→N4:D5→D4:S5→S4
+:N→N5:D→D5:S→S5
+:End
+:If ID==5:Then
+:N6→N5:D6→D5:S6→S5
+:N→N6:D→D6:S→S6
+:End
+:If ID==6:Then
+:N7→N6:D7→D6:S7→S6
+:N→N7:D→D7:S→S7
+:End
+:If ID==7:Then
+:N8→N7:D8→D7:S8→S7
+:N→N8:D→D8:S→S8
+:End
+:If ID==8:Then
+:N9→N8:D9→D8:S9→S8
+:N→N9:D→D9:S→S9
+:End
+:If ID==9:Then
+:N10→N9:D10→D9:S10→S9
+:N→N10:D→D10:S→S10
+:End
+:If ID==10:Then
+:N11→N10:D11→D10:S11→S10
+:N→N11:D→D11:S→S11
+:End
+:If ID==11:Then
+:N12→N11:D12→D11:S12→S11
+:N→N12:D→D12:S→S12
+:End
+:If ID==12:Then
+:N1→N12:D1→D12:S1→S12
+:N→N1:D→D1:S→S1
+:End
+:Goto M
+:
+:Lbl Q
+:Return

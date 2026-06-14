@@ -1,0 +1,41 @@
+:Lbl M
+:ClLCD
+:Outpt(1,1,"/////////////////////")
+:Outpt(3,9,"DOPE")
+:Outpt(5,4,"Ballistic TI-85")
+:Outpt(7,7,"Loading...")
+:Outpt(8,1,"/////////////////////")
+:
+:For(I,1,21)
+:Outpt(4,I,"-=>")
+:rand(100
+:rand(100
+:End
+:
+:ClLCD
+:DCurr
+:Menu(1,"SOLVE",S,2,"RECRD",RC,3,"RANGE",RA,4,"AMMO",A,5,"QUIT",Q)
+:
+:Lbl S
+:DWait
+:DSolv
+:Goto M
+:
+:Lbl RC
+:DWait
+:DRec
+:Goto M
+:
+:Lbl RA
+:DWait
+:DRange
+:Goto M
+:
+:Lbl A
+:DWait
+:DLoad
+:GotoM
+:
+:Lbl Q
+:ClLCD
+:Return

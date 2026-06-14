@@ -1,0 +1,9 @@
+:dim D→L1
+:L1(1)-1→Ranges
+:D(L1(1),1)→MaxR
+:
+:Outpt(2,5,"Ammo selected:")
+:Outpt(3,1,ID):Outpt(3,2,":"):Outpt(3,4,N)
+:Outpt(5,1,S):Outpt(5,5,"shots recorded at")
+:Outpt(6,1,Ranges):Outpt(6,5,"ranges to     yds"):Outpt(6,15,MaxR)
+:Return

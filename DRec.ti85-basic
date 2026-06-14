@@ -1,0 +1,95 @@
+:Lbl C
+:ClLCD
+:Disp "Range in yards?"
+:Input R
+:Disp "Wind origin in"
+:Disp "degrees from shot?"
+:Input H
+:Disp "Wind speed in MPH?"
+:Input V
+:ClLCD
+:
+:abs (V*sin (H*π/180))→C
+:
+:Outpt(2,1,"Please set turrets to")
+:Outpt(3,1,"0 and aim for center.")
+:Outpt(5,4,"Press CHANGE if")
+:Outpt(6,2,"conditions change.")
+:Menu(1,"HIT",H,2,"CHANGE",C,5,"CANC",Q)
+:
+:Lbl H
+:ClLCD
+:Disp "Hit drop in mils?"
+:Input EO
+:Disp "Hit drift in mils?"
+:Input WO
+:
+:abs WO→WO
+:If C>0.2:Then
+:WO*10/C→WO
+:Else
+:0→WO
+:End
+:
+:0→RExists
+:dim D→L1
+:L1(1)→T
+:For(I,1,T)
+:If D(I,1)==R:Then
+:1→RExists
+:D(I,4)→Weight
+:(D(I,2)*Weight+EO)/(Weight+1)→D(I,2)
+:Weight+1→D(I,4)
+:D(I,5)→Weight
+:(D(I,3)*Weight+WO)/(Weight+1)→D(I,3)
+:Weight+1→D(I,5)
+:End
+:End
+:
+:If RExists==0:Then
+:[[R,EO,WO,1,1]]→DT
+:aug(Dᵀ,DTᵀ)ᵀ→D
+:T+1→T
+:For(I,T,2,-1)
+:If D(I,1)<D(I-1,1)
+:rSwap(D,I,I-1)→D
+:End
+:End
+:
+:S+1→S
+:
+:If ID==1
+:D→D1:S→S1
+:If ID==2
+:D→D2:S→S2
+:If ID==3
+:D→D3:S→S3
+:If ID==4
+:D→D4:S→S4
+:If ID==5
+:D→D5:S→S5
+:If ID==6
+:D→D6:S→S6
+:If ID==7
+:D→D7:S→S7
+:If ID==8
+:D→D8:S→S8
+:If ID==9
+:D→D9:S→S9
+:If ID==10
+:D→D10:S→S10
+:If ID==11
+:D→D11:S→S11
+:If ID==12
+:D→D12:S→S12
+:
+:ClLCD
+:Outpt(2,4,"Shot recorded.")
+:Outpt(4,1,S)
+:Outpt(4,5,"shots in dataset.")
+:Outpt(6,5,"Shoot again?")
+:Menu(1,"YES",C,2,"NO",Q)
+:
+:Lbl Q
+:ClLCD
+:Return
