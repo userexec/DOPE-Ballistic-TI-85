@@ -14,7 +14,7 @@ DClear
 ```
 These instructions set up all variables and matrices necessary for the program to function.
 
-Once memory is initialized, on all subsequent uses of the calculator simply run `DOPE`. All other programs are subroutines called by DOPE. You'll need to chose the AMMO menu and set up an ammunition type before recording or solving shots.
+Once memory is initialized, on all subsequent uses of the calculator simply run `DOPE`. All other programs are subroutines called by DOPE. You'll need to choose the AMMO menu and set up an ammunition type before recording or solving shots.
 
 ## Using DOPE
 
