@@ -25,8 +25,8 @@
 :dim D→L1
 :L1(1)→Ranges
 :If Ranges<3:Then
-:Outpt(3,3,"At least 2 ranges")
-:Outpt(4,1,"required to form arc.")
+:Outpt(4,2,"At least 2 ranges")
+:Outpt(5,1,"required to form arc.")
 :Pause
 :ClLCD
 :Return
@@ -144,7 +144,7 @@
 :round(WD,1)→WD
 :Outpt(5,1,WD)
 :Outpt(5,6,"mils")
-:Outpt(5,9,WAdj)
+:Outpt(5,11,WAdj)
 :End
 :Pause
 :Return
