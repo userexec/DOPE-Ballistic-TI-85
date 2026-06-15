@@ -2,7 +2,8 @@
 :Disp "Range in yards?"
 :Input R
 :Disp "Wind origin in"
-:Disp "degrees from shot?"
+:Disp "degrees from shot,"
+:Disp "clockwise?"
 :Input H
 :Disp "Wind speed in MPH?"
 :Input V
