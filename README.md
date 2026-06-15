@@ -16,7 +16,7 @@ Once memory is initialized, on all subsequent uses of the calculator simply run 
 
 ## Using DOPE
 
-Dope's main menu lets you choose from a shot solver, a shot recorder, and a range estimator. The shot solver and recorder are based on your currently selected ammunition type.
+DOPE's main menu lets you choose from a shot solver, a shot recorder, and a range estimator. The shot solver and recorder are based on your currently selected ammunition type.
 
 ### SOLVE
 
