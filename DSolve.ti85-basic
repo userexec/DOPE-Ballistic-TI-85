@@ -1,0 +1,149 @@
+:ClLCD
+:Disp "Range in yards?"
+:Input R
+:Disp "Wind origin in"
+:Disp "degrees from shot?"
+:Input H
+:Disp "Wind speed in MPH?"
+:Input V
+:ClLCD
+:
+:V*sin (H*π/180)→C
+:If abs C<0.2:Then
+:1→WindDis
+:Else
+:0→WindDis
+:If C≥0
+:"left"→WAdj
+:If C<0
+:"right"→WAdj
+:End
+:abs C→C
+:
+:"Get dimensions and handle edge cases
+:dim D→L1
+:L1(1)→Ranges
+:If Ranges<3:Then
+:Outpt(3,3,"At least 2 ranges")
+:Outpt(4,1,"required to form arc.")
+:Pause
+:ClLCD
+:Return
+:End
+:If R>D(Ranges,1):Then
+:Outpt(3,1,"Extrapolating outside")
+:Outpt(4,4,"recorded shots.")
+:Outpt(5,2,"Adjustment accuracy")
+:Outpt(6,2,"may be diminished.")
+:Pause
+:ClLCD
+:End
+:0→Winds
+:For(I,1,Ranges)
+:If D(I,5)≠0
+:Winds+1→Winds
+:End
+:If Winds<3:Then
+:1→WindDis
+:Outpt(3,3,"Insufficient wind")
+:Outpt(4,3,"data. Windage will")
+:Outpt(5,6,"be skipped.")
+:Pause
+:ClLCD
+:End
+:
+:"Build the H list (spacings between ranges)
+:Ranges-2→M
+:For(I,1,Ranges-1)
+:D(I+1,1)-D(I,1)→H(I)
+:End
+:
+:"Build the tridiagonal matrix A (M * M)
+:{M,M}→dim A
+:For(K,1,M)
+:2*(H(K)+H(K+1))→A(K,K)
+:If K>1
+:H(K)→A(K,K-1)
+:If K<M
+:H(K+1)→A(K,K+1)
+:End
+:
+:"Invert A once and store
+:A⁻¹→Z
+:
+:"Build b for elevation, solve
+:{M,1}→dim B
+:For(K,1,M)
+:3*((D(K+2,2)-D(K+1,2))/H(K+1)-(D(K+1,2)-D(K,2))/H(K))→B(K,1)
+:End
+:Z*B→SE
+:
+:"Build b for windage, solve
+:If WindDis==0:Then
+:For(K,1,M)
+:3*((D(K+2,3)-D(K+1,3))/H(K+1)-(D(K+1,3)-D(K,3))/H(K))→B(K,1)
+:End
+:Z*B→SW
+:End
+:
+:"Find which interval R falls in
+:1→I
+:While I<Ranges-1 and D(I+1,1)<R
+:I+1→I
+:End
+:
+:"Get the c values for this interval (elevation)
+:If I==1:Then
+:0→cI
+:Else
+:SE(I-1,1)→cI
+:End
+:If I≥Ranges-1:Then
+:0→cJ
+:Else
+:SE(I,1)→cJ
+:End
+:
+:"Evaluate the cubic for elevation
+:R-D(I,1)→dx
+:D(I,2)→aV
+:(D(I+1,2)-D(I,2))/H(I)-H(I)*(2*cI+cJ)/3→bV
+:(cJ-cI)/(3*H(I))→dV
+:aV+bV*dx+cI*dx²+dV*dx³→EL
+:
+:"Get the c values for this interval (windage)
+:If WindDis==0:Then
+:If I==1:Then
+:0→cI
+:Else
+:SW(I-1,1)→cI
+:End
+:If I≥Ranges-1:Then
+:0→cJ
+:Else
+:SW(I,1)→cJ
+:End
+:End
+:
+:"Evaluate the cubic for windage
+:If WindDis==0:Then
+:D(I,3)→aV
+:(D(I+1,3)-D(I,3))/H(I)-H(I)*(2*cI+cJ)/3→bV
+:(cJ-cI)/(3*H(I))→dV
+:aV+bV*dx+cI*dx²+dV*dx³→WD
+:WD*C/10→WD
+:End
+:
+:Outpt(1,1,"Elevation adjust:")
+:round(EL,1)→EL
+:Outpt(2,1,EL)
+:Outpt(2,6,"mils")
+:If WindDis==0:Then
+:Outpt(4,1,"Windage adjust:")
+:round(WD,1)→WD
+:Outpt(5,1,WD)
+:Outpt(5,6,"mils")
+:Outpt(5,9,WAdj)
+:End
+:Pause
+:Return
