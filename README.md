@@ -74,7 +74,7 @@ If you're a professional sniper, the data recording and shot calculations are li
 
 ### What factors does it surprisingly take into account?
 
-A lot of data required by ballistic calculator apps is simply unnecessary here because it gets modeled with real-world feedback into your dataset more accurately than any information from the ammo manufacturer could enable. This program does not need to know things like your ammunition's weight, ballistic coefficient, velocity, or anything about how your rifle and sights are configured.
+A lot of data required by ballistic calculator apps is simply unnecessary here because it gets modeled with real-world feedback into your dataset more accurately than any information from the ammo manufacturer could enable. This program does not need to know things like your ammunition's weight, ballistic coefficient, velocity, or anything about how your rifle and scope are configured.
 
 ### Is an anemometer recommended?
 
