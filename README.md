@@ -2,6 +2,8 @@
 
 This program is a DOPE (Data on Previous Engagements) chart recorder, shot calculator, and range estimator for the Texas Instruments TI-85 graphing calculator. Recording sample shots at known ranges with particular rifle and ammunition combinations allows DOPE to estimate the drop and drift of new shots. Accuracy increases with each shot recorded.
 
+![TI-85 Running DOPE](https://private-user-images.githubusercontent.com/5970137/607722987-8c687937-8731-4ce0-b418-eb0f1c9f2d44.png)
+
 ## Running DOPE
 
 Transfer all programs in this project to your TI-85 and run the following initialization instructions to prepare your memory:
