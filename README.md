@@ -48,7 +48,7 @@ Additionally, only 12 slots are available for different ammunition types. Signif
 
 ### How does this program calculate shots at new ranges and wind conditions?
 
-The shots you record become points in two cubic splines specific to each ammo type you use: one for drop and one for drift. New shots' conditions are interpolated on these curves based on the range and wind conditions you report.
+The shots you record become points in two cubic spline calculations specific to each ammo type you use: one for drop and one for drift. New shots' conditions are interpolated on these curves based on the range and wind conditions you report.
 
 Crosswind is assumed to have a linear effect on bullet drift in the calculations, and all of your recorded shots with a crosswind component are normalized to 10mph. If you report that you're shooting in a 2mph crosswind, a fifth of the estimated drift is reported.
 
