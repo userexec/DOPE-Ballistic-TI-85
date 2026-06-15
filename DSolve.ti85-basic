@@ -110,7 +110,7 @@
 :D(I,2)→aV
 :(D(I+1,2)-D(I,2))/H(I)-H(I)*(2*cI+cJ)/3→bV
 :(cJ-cI)/(3*H(I))→dV
-:aV+bV*dx+cI*dx²+dV*dx³→EL
+:aV+bV*dx+cI*dx²+dV*dx^3→EL
 :
 :"Get the c values for this interval (windage)
 :If WindDis==0:Then
@@ -131,7 +131,7 @@
 :D(I,3)→aV
 :(D(I+1,3)-D(I,3))/H(I)-H(I)*(2*cI+cJ)/3→bV
 :(cJ-cI)/(3*H(I))→dV
-:aV+bV*dx+cI*dx²+dV*dx³→WD
+:aV+bV*dx+cI*dx²+dV*dx^3→WD
 :WD*C/10→WD
 :End
 :
