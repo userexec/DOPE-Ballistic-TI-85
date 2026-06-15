@@ -77,3 +77,11 @@ A lot of data required by ballistic calculator apps is simply unnecessary here b
 ### Is an anemometer recommended?
 
 Yes, for the most accurate results you should use an anemometer at least on your recorded shots. But let's be honest, it would be ridiculous to pair a $500 Kestrel with a $2 TI-85. Just get a $20 anemometer off AliExpress or something. This program should not be fundamentally accurate enough to warrant a precision meter.
+
+### Will this work on a TI-83? A TI-89? A 92?
+
+No. It may work on an 86, but I can't say for sure. The TI-85 is the weird one out of the 8x lineup, and a lot of its TI-BASIC is either limited or unique to it. It wouldn't be hard to rewrite this for an 89 or 92, though, mostly with some find and replace. The 83/84 should also be capable, though some structural changes and significant variable renaming would be required. I imagine it will never be ported to a different calculator, but feel free to prove me wrong with a merge request for equal measures of judgment and respect.
+
+### How do I get this on my TI-85?
+
+In 2026? You probably don't, frankly. If you have an old GraphLink cable and software and a computer from the turn of the century then sure, there's a way. I don't remember what it is, but it's theoretically possible. Failing that, you type it by hand into your TI-85 like you mean it.
